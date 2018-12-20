@@ -29,12 +29,27 @@
   ],
   "babel": {
     "presets": [
-      "react-app"
+      "module:metro-react-native-babel-preset"
     ],
+    "env": {
+      "production": {
+        "plugins": [
+          "transform-remove-console"
+        ]
+      }
+    },
     "plugins": [
-      "transform-decorators-legacy",
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ],
       "transform-class-properties",
       "react-hot-loader/babel"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.2.3"
   }
 }

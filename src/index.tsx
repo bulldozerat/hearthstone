@@ -8,9 +8,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import counterStore from './store/counter';
+import SearchSingleCard from './store/SearchSingleCardStore';
 
 const stores = {
-  counterStore
+  counterStore,
+  SearchSingleCard
 };
 
 const num = 1;
