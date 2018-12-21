@@ -2,10 +2,12 @@ import { observable, action } from 'mobx';
 
 export class FetchAllCards {
     @observable cardData = [];
+    @observable selectText = "Search cards by race";
 
-    @action fetchData = async () => {
+    @action fetchData = async (e: any) => {
+        const selectedClass: any = e.target.value;
         const response = await fetch(
-            "https://omgvamp-hearthstone-v1.p.mashape.com/cards",
+            `https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/${selectedClass}`,
             {
                 method: 'GET',
                 headers: {
@@ -16,8 +18,6 @@ export class FetchAllCards {
         );
         const data = await response.json();
         this.cardData = data;
-        console.log(data);
-        
     }
 }
 

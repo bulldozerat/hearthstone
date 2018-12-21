@@ -26,7 +26,7 @@ const Wrapper = styled.div`
 @observer
 class App extends Component<MyProps, MyState>  {
   componentDidMount() {
-    this.props.FetchAllCards.fetchData();
+    //this.props.FetchAllCards.fetchData();
   }
 
   render() {
