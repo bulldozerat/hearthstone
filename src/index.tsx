@@ -7,11 +7,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import counterStore from './store/counter';
+import FetchAllCards from './store/FetchAllCardsStore';
 import SearchSingleCard from './store/SearchSingleCardStore';
 
 const stores = {
-  counterStore,
+  FetchAllCards,
   SearchSingleCard
 };
 

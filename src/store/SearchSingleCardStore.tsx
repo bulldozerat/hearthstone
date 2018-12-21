@@ -40,8 +40,6 @@ export class SearchSingleCard {
 
     @action hide = () => {
         this.display = "none";
-        console.log(this.display);
-        
     }
 }
 
