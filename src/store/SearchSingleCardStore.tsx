@@ -2,6 +2,8 @@ import { observable, action } from 'mobx';
 
 export class SearchSingleCard {
     @observable card: string = "https://www.logolynx.com/images/logolynx/25/25cb1ccb3913a0224fd610ce83bfc4c3.png";
+    @observable display: string = "none";
+
     @action fetchCard = async (e: any) => {
         let searchVal = e.target.value
             .toLowerCase()
@@ -30,6 +32,16 @@ export class SearchSingleCard {
         }else{
             this.card = "https://www.logolynx.com/images/logolynx/25/25cb1ccb3913a0224fd610ce83bfc4c3.png"
         }
+    }
+
+    @action show = () => {
+        this.display = "block";
+    }
+
+    @action hide = () => {
+        this.display = "none";
+        console.log(this.display);
+        
     }
 }
 
