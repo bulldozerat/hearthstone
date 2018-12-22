@@ -17,7 +17,7 @@ interface MyProps {
 interface MyState { }
 
 const Wrapper = styled.div`
-  width: 1140px;
+  width: 870px;
   margin: 20px auto;
   border: 1px solid green;
 `
@@ -29,13 +29,18 @@ class App extends Component<MyProps, MyState>  {
     //this.props.FetchAllCards.fetchData();
   }
 
+  ResetStart = () => {
+    this.props.SearchSingleCard.hide();
+    this.props.FetchAllCards.hideCards();
+  }
+
   render() {
     return (
       <Wrapper>
-        <BackButton val="Home" color="secondary" hide={this.props.SearchSingleCard.hide} />
+        <BackButton val="Reset" color="secondary" reset={this.ResetStart} />
         <HomeButton val="One card search" color="primary" show={this.props.SearchSingleCard.show} />
-        <CardSearch />
         <AllCards />
+        <CardSearch />
       </Wrapper>
     );
   }

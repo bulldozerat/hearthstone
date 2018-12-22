@@ -25,12 +25,12 @@ let AllCards = inject('FetchAllCards')(observer((props) => {
                 </Select>
             </FormControl>
 
-            <div>
+            <div className="class-images-wrapper">
                 {props.FetchAllCards.cardData.map(
                     (e: any, i: number) => { 
                         return <ReactImageFallback
                             src={e.img}
-                            fallbackImage="https://d1u5p3l4wpay3k.cloudfront.net/hearthstone_gamepedia/thumb/4/4b/Card_back-Power_Core.png/200px-Card_back-Power_Core.png?version=0c2427a5c46888f79f21bd35546ac12b"
+                            fallbackImage="http://1x1px.me/FFFFFF-0.1.png"
                             data-name={e.name}
                             alt="" 
                             />

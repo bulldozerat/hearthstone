@@ -21,6 +21,10 @@ export class FetchAllCards {
         console.log(data);
         
     }
+
+    @action hideCards = () => {
+        this.cardData = [];
+    }
 }
 
 export default new FetchAllCards();

@@ -1,8 +1,9 @@
 import { observable, action } from 'mobx';
 
 export class SearchSingleCard {
-    @observable card: string = "https://www.logolynx.com/images/logolynx/25/25cb1ccb3913a0224fd610ce83bfc4c3.png";
+    @observable card: string = "https://vignette.wikia.nocookie.net/hearthstone/images/2/2f/Frostmourne_card_back.png/revision/latest?cb=20170710182835";
     @observable display: string = "none";
+    @observable allCardsData: any = [];
 
     @action fetchCard = async (e: any) => {
         let searchVal = e.target.value
@@ -28,9 +29,10 @@ export class SearchSingleCard {
         
         if (isCardFound && data[0]){
             this.card = data[0].img;
-            console.log(data[0].img);  
+            this.allCardsData = data[0];
+            console.log(data[0]);  
         }else{
-            this.card = "https://www.logolynx.com/images/logolynx/25/25cb1ccb3913a0224fd610ce83bfc4c3.png"
+            this.card = "https://vignette.wikia.nocookie.net/hearthstone/images/2/2f/Frostmourne_card_back.png/revision/latest?cb=20170710182835"
         }
     }
 
