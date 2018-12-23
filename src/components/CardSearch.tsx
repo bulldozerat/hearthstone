@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { inject, observer } from 'mobx-react';
 import CardStats from "./CardStats";
+import Button from '@material-ui/core/Button';
 
 let CardSearch = inject("SearchSingleCard")(observer((props) => {
     const cardWrapper: any = {
@@ -33,6 +34,18 @@ let CardSearch = inject("SearchSingleCard")(observer((props) => {
                     <CardStats text="Player Class:" checkInfo={props.SearchSingleCard.allCardsData.playerClass} />
                     <CardStats text="Race:" checkInfo={props.SearchSingleCard.allCardsData.race} />
                     <CardStats text="Text:" checkInfo={props.SearchSingleCard.allCardsData.text} />
+                    {
+                        props.SearchSingleCard.allCardsData.imgGold 
+                            ? <button 
+                            color="primary" 
+                            onClick={props.SearchSingleCard.changeGoldNormal}
+                                data-gold-image={props.SearchSingleCard.allCardsData.imgGold}
+                            data-normal-image={props.SearchSingleCard.allCardsData.img}
+                            >
+                                {props.SearchSingleCard.changeCardGoldNormalText}   
+                            </button>
+                        : null
+                    }
                 </div>
             </div>
             

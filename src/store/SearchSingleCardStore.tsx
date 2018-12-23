@@ -4,6 +4,7 @@ export class SearchSingleCard {
     @observable card: string = "https://vignette.wikia.nocookie.net/hearthstone/images/2/2f/Frostmourne_card_back.png/revision/latest?cb=20170710182835";
     @observable display: string = "none";
     @observable allCardsData: any = [];
+    @observable changeCardGoldNormalText = "Change card to gold version";
 
     @action fetchCard = async (e: any) => {
         let searchVal = e.target.value
@@ -42,6 +43,17 @@ export class SearchSingleCard {
 
     @action hide = () => {
         this.display = "none";
+    }
+
+    @action changeGoldNormal = (e: any) => {
+        let isItNormalCard = this.card === e.target.getAttribute('data-normal-image');
+        if(isItNormalCard) {
+            this.card = e.target.getAttribute('data-gold-image');
+            this.changeCardGoldNormalText = "Change card to normal version";
+        }else{
+            this.card = e.target.getAttribute('data-normal-image');
+            this.changeCardGoldNormalText = "Change card to gold version";
+        }
     }
 }
 
