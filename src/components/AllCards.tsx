@@ -6,7 +6,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import ReactImageFallback from "react-image-fallback";
 
-let AllCards = inject('FetchAllCards')(observer((props) => {
+let AllCards = inject('FetchAllCards', 'SearchSingleCard')(observer((props) => {
     return (
         <Fragment>
             <FormControl>
