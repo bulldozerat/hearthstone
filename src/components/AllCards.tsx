@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import ReactImageFallback from "react-image-fallback";
+import ClassCard from "./ClassCard";
 
 let AllCards = inject('FetchAllCards', 'SearchSingleCard')(observer((props) => {
     return (
@@ -27,13 +28,8 @@ let AllCards = inject('FetchAllCards', 'SearchSingleCard')(observer((props) => {
 
             <div className="class-images-wrapper">
                 {props.FetchAllCards.cardData.map(
-                    (e: any, i: number) => { 
-                        return <ReactImageFallback
-                            src={e.img}
-                            fallbackImage="http://1x1px.me/FFFFFF-0.1.png"
-                            data-name={e.name}
-                            alt="" 
-                            />
+                    (element: any, i: number) => { 
+                        return <ClassCard imgUrl={element.img} name={element.name}/>
                     }
                 )}
             </div>
