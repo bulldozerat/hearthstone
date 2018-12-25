@@ -12,7 +12,6 @@ import styled from 'styled-components';
 interface MyProps {
   FetchAllCards?: any,
   SearchSingleCard?: any,
-  ClassSingleCard?: any
 }
 
 interface MyState { }
@@ -20,10 +19,11 @@ interface MyState { }
 const Wrapper = styled.div`
   width: 870px;
   margin: 20px auto;
-  border: 1px solid green;
+  background: #f9fafc;
+  padding 20px;
 `
 
-@inject('FetchAllCards', 'SearchSingleCard', 'ClassSingleCard')
+@inject('FetchAllCards', 'SearchSingleCard')
 @observer
 class App extends Component<MyProps, MyState>  {
   componentDidMount() {
@@ -33,6 +33,7 @@ class App extends Component<MyProps, MyState>  {
   ResetStart = () => {
     this.props.SearchSingleCard.hide();
     this.props.FetchAllCards.hideCards();
+    this.props.FetchAllCards.hideSingleCard();
   }
 
   render() {

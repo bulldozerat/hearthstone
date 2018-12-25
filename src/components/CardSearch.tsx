@@ -36,15 +36,16 @@ let CardSearch = inject("SearchSingleCard")(observer((props) => {
                     <CardStats text="Text:" checkInfo={props.SearchSingleCard.allCardsData.text} />
                     {
                         props.SearchSingleCard.allCardsData.imgGold 
-                            ? <button 
-                            color="primary" 
-                            onClick={props.SearchSingleCard.changeGoldNormal}
+                            ? 
+                            <button 
+                                className="gold-normal-btn" 
+                                onClick={props.SearchSingleCard.changeGoldNormal}
                                 data-gold-image={props.SearchSingleCard.allCardsData.imgGold}
-                            data-normal-image={props.SearchSingleCard.allCardsData.img}
+                                data-normal-image={props.SearchSingleCard.allCardsData.img}
                             >
                                 {props.SearchSingleCard.changeCardGoldNormalText}   
                             </button>
-                        : null
+                            : null
                     }
                 </div>
             </div>
