@@ -9,13 +9,13 @@ import * as serviceWorker from './serviceWorker';
 
 import FetchAllCards from './store/FetchAllCardsStore';
 import SearchSingleCard from './store/SearchSingleCardStore';
+import SearchByParametres from './store/SearchByParametresStore';
 
 const stores = {
   FetchAllCards,
   SearchSingleCard,
+  SearchByParametres
 };
-
-const num = 1;
 
 ReactDOM.render(  
   <Provider {...stores}>

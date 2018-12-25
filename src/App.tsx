@@ -6,12 +6,14 @@ import './App.css';
 import HomeButton from './components/HomeButton';
 import BackButton from './components/BackButton';
 import AllCards from './components/AllCards';
+import ParametreSeach from './components/ParametreSearch';
 import styled from 'styled-components';
 
 
 interface MyProps {
   FetchAllCards?: any,
   SearchSingleCard?: any,
+  SearchByParametres?: any
 }
 
 interface MyState { }
@@ -41,8 +43,10 @@ class App extends Component<MyProps, MyState>  {
       <Wrapper>
         <BackButton val="Reset" color="secondary" reset={this.ResetStart} />
         <HomeButton val="One card search" color="primary" show={this.props.SearchSingleCard.show} />
+        <HomeButton val="Search cars by parametres" color="primary" />
         <AllCards />
         <CardSearch />
+        <ParametreSeach />
       </Wrapper>
     );
   }
