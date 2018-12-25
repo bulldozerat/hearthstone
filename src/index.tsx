@@ -9,10 +9,12 @@ import * as serviceWorker from './serviceWorker';
 
 import FetchAllCards from './store/FetchAllCardsStore';
 import SearchSingleCard from './store/SearchSingleCardStore';
+import ClassSingleCard from './store/ClassSingleCardStore';
 
 const stores = {
   FetchAllCards,
-  SearchSingleCard
+  SearchSingleCard,
+  ClassSingleCard
 };
 
 const num = 1;

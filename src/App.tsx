@@ -11,7 +11,8 @@ import styled from 'styled-components';
 
 interface MyProps {
   FetchAllCards?: any,
-  SearchSingleCard?: any
+  SearchSingleCard?: any,
+  ClassSingleCard?: any
 }
 
 interface MyState { }
@@ -22,7 +23,7 @@ const Wrapper = styled.div`
   border: 1px solid green;
 `
 
-@inject('FetchAllCards', 'SearchSingleCard')
+@inject('FetchAllCards', 'SearchSingleCard', 'ClassSingleCard')
 @observer
 class App extends Component<MyProps, MyState>  {
   componentDidMount() {

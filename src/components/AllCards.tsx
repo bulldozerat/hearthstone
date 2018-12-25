@@ -7,7 +7,7 @@ import Select from '@material-ui/core/Select';
 import ReactImageFallback from "react-image-fallback";
 import ClassCard from "./ClassCard";
 
-let AllCards = inject('FetchAllCards', 'SearchSingleCard')(observer((props) => {
+let AllCards = inject('FetchAllCards', 'SearchSingleCard', 'ClassSingleCard')(observer((props) => {
     return (
         <Fragment>
             <FormControl>
@@ -27,11 +27,18 @@ let AllCards = inject('FetchAllCards', 'SearchSingleCard')(observer((props) => {
             </FormControl>
 
             <div className="class-images-wrapper">
+                <img src={props.ClassSingleCard.card} className="found-big-image" />
                 {props.FetchAllCards.cardData.map(
-                    (element: any, i: number) => { 
-                        return <ClassCard imgUrl={element.img} name={element.name}/>
+                    (element: any, i: number) => {
+                        return <ClassCard 
+                        imgUrl={element.img} 
+                        name={element.name} 
+                        key={i} 
+                        cardSeach={props.ClassSingleCard.fetchSingleCard}
+                        />
                     }
                 )}
+                
             </div>
         </Fragment>
     )
