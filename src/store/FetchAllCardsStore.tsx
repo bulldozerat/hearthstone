@@ -21,8 +21,6 @@ export class FetchAllCards {
         );
         const data = await response.json();
         this.cardData = data;
-        console.log(data);
-        
     }
 
     @action hideCards = () => {
