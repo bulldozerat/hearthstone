@@ -17,7 +17,7 @@ interface MyProps {
 
 interface MyState { }
 
-@inject('SearchByParametres')
+@inject('SearchByParametres', 'FetchAllCards')
 @observer
 class ParametreSeach extends React.Component<MyProps, MyState> {
     render() {
@@ -47,8 +47,7 @@ class ParametreSeach extends React.Component<MyProps, MyState> {
                                 imgUrl={element.img}
                                 name={element.name}
                                 key={i}
-                                cardSeach={() => console.log("To be implemented")
-                                }
+                                cardSeach={this.props.FetchAllCards.fetchSingleCard}
                             />
                         }
                     )}

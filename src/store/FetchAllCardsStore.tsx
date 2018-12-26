@@ -51,6 +51,10 @@ export class FetchAllCards {
         this.card = data[0].img;
         this.allCardData = data[0];
         this.hideCards();
+        window.scrollTo({
+            top: 100,
+            behavior: "smooth"
+        })
     }
 
     @action changeGoldNormal = (e: any) => {
