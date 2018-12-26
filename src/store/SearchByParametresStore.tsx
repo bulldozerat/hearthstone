@@ -6,8 +6,16 @@ export class SearchByParametres {
     @observable attack: string = "";
     @observable cost: string = "";
     @observable health: string = "";
+    @observable errorState: boolean = false;
+    @observable errorMessage: string = "";
 
     @action fetchCardsByQuality = async () => {
+        if (this.quality == ""){
+            this.errorState = true;
+            this.errorMessage = "You need to select card quality";
+            return;
+        }
+
         this.cardData = [];
         const response = await fetch(
             `https://omgvamp-hearthstone-v1.p.mashape.com/cards/qualities/${this.quality}?${this.attack}${this.health}${this.cost}`,
@@ -20,6 +28,14 @@ export class SearchByParametres {
             }
         );
         const data = await response.json();
+
+        if(data.error == 404) {
+            this.errorState = true;
+            this.errorMessage = "Not a single card found with these parametres. Try again.";
+            return;
+        }
+        
+        this.errorState = false;
         this.cardData = data;
     }
 

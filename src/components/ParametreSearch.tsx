@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { inject, observer } from 'mobx-react';
+import Error from './Error';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
@@ -36,6 +37,7 @@ class ParametreSeach extends React.Component<MyProps, MyState> {
             <Fragment>
                 <div className="parametres-wrapper">
                     <FormControl>
+                        <Error message={this.props.SearchByParametres.errorMessage} errorState={this.props.SearchByParametres.errorState}/>
                         <InputLabel>Select card quality*</InputLabel>
                         <Select className="all-select" onChange={this.props.SearchByParametres.getRariry}>
                             <MenuItem value='Free'>Free</MenuItem>
