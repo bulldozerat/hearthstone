@@ -20,23 +20,11 @@ interface MyState { }
 @inject('SearchByParametres')
 @observer
 class ParametreSeach extends React.Component<MyProps, MyState> {
-    constructor(props: any) {
-        super(props);
-    }
-
-    FormSearch = () => {
-        this.props.SearchByParametres.fetchCardsByQuality(); 
-    }
-
-    HandleForm = (e: any) => {
-        console.log(e.target.name, e.target.value);
-    }
-
     render() {
         return (
             <Fragment>
                 <div className="parametres-wrapper">
-                    <FormControl>
+                    <FormControl style={{ width: '100%' }}>
                         <Error message={this.props.SearchByParametres.errorMessage} errorState={this.props.SearchByParametres.errorState}/>
                         <InputLabel>Select card quality*</InputLabel>
                         <Select className="all-select" onChange={this.props.SearchByParametres.getRariry}>
@@ -46,10 +34,10 @@ class ParametreSeach extends React.Component<MyProps, MyState> {
                             <MenuItem value='Epic'>Epic</MenuItem>
                             <MenuItem value="Legendary">Legendary</MenuItem>
                         </Select>
-                        <TextField onChange={this.props.SearchByParametres.getParametre} label="Attack" name="attack" variant="outlined" />
-                        <TextField onChange={this.props.SearchByParametres.getParametre} label="Cost" name="cost" variant="outlined" />
-                        <TextField onChange={this.props.SearchByParametres.getParametre} label="Health" name="health" variant="outlined" />
-                        <Button variant="contained" onClick={this.FormSearch.bind(1, 2, 3)}>Search</Button>
+                        <TextField onChange={this.props.SearchByParametres.getParametre} margin="normal" label="Attack" name="attack" variant="outlined" />
+                        <TextField onChange={this.props.SearchByParametres.getParametre} margin="normal" label="Cost" name="cost" variant="outlined" />
+                        <TextField onChange={this.props.SearchByParametres.getParametre} margin="normal" label="Health" name="health" variant="outlined" />
+                        <Button variant="contained" onClick={this.props.SearchByParametres.fetchCardsByQuality} style={{marginTop: "20px"}}>Search</Button>
                     </FormControl>
                 </div>
                 <div className="class-images-wrapper">
