@@ -35,19 +35,18 @@ class ParametreSeach extends React.Component<MyProps, MyState> {
         return (
             <Fragment>
                 <div className="parametres-wrapper">
-                    <FormControl onChange={this.HandleForm}>
+                    <FormControl>
                         <InputLabel>Select card quality*</InputLabel>
-                        <Select className="all-select">
+                        <Select className="all-select" onChange={this.props.SearchByParametres.getRariry}>
                             <MenuItem value='Free'>Free</MenuItem>
                             <MenuItem value="Common">Common</MenuItem>
                             <MenuItem value="Rare">Rare</MenuItem>
                             <MenuItem value='Epic'>Epic</MenuItem>
                             <MenuItem value="Legendary">Legendary</MenuItem>
                         </Select>
-                        <TextField label="Attack" name="attack" value="" margin="normal" variant="outlined" />
-                        <TextField label="Cost" name="cost" value="" margin="normal" variant="outlined" />
-                        <TextField label="Durability" name="durability" value="" margin="normal" variant="outlined" />
-                        <TextField label="Health" name="health" value="" margin="normal" variant="outlined" />
+                        <TextField onChange={this.props.SearchByParametres.getParametre} label="Attack" name="attack" variant="outlined" />
+                        <TextField onChange={this.props.SearchByParametres.getParametre} label="Cost" name="cost" variant="outlined" />
+                        <TextField onChange={this.props.SearchByParametres.getParametre} label="Health" name="health" variant="outlined" />
                         <Button variant="contained" onClick={this.FormSearch.bind(1, 2, 3)}>Search</Button>
                     </FormControl>
                 </div>
