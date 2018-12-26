@@ -25,17 +25,15 @@ const Wrapper = styled.div`
   padding 20px;
 `
 
-@inject('FetchAllCards', 'SearchSingleCard')
+@inject('FetchAllCards', 'SearchSingleCard', 'SearchByParametres')
 @observer
 class App extends Component<MyProps, MyState>  {
-  componentDidMount() {
-    //this.props.FetchAllCards.fetchData();
-  }
 
   ResetStart = () => {
     this.props.SearchSingleCard.hide();
     this.props.FetchAllCards.hideCards();
     this.props.FetchAllCards.hideSingleCard();
+    this.props.SearchByParametres.clearParametre();
   }
 
   render() {
@@ -43,7 +41,7 @@ class App extends Component<MyProps, MyState>  {
       <Wrapper>
         <BackButton val="Reset" color="secondary" reset={this.ResetStart} />
         <HomeButton val="One card search" color="primary" show={this.props.SearchSingleCard.show} />
-        <HomeButton val="Search cars by parametres" color="primary" />
+        <HomeButton val="Search cars by parametres" color="primary" show={this.props.SearchByParametres.showParametreSearch}/>
         <AllCards />
         <CardSearch />
         <ParametreSeach />

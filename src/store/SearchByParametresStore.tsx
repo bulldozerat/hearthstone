@@ -8,6 +8,7 @@ export class SearchByParametres {
     @observable health: string = "";
     @observable errorState: boolean = false;
     @observable errorMessage: string = "";
+    @observable hideEverything: string = "none";
 
     @action fetchCardsByQuality = async () => {
         if (this.quality == ""){
@@ -34,7 +35,7 @@ export class SearchByParametres {
             this.errorMessage = "Not a single card found with these parametres. Try again.";
             return;
         }
-        
+
         this.errorState = false;
         this.cardData = data;
     }
@@ -59,6 +60,14 @@ export class SearchByParametres {
             default: ""
                 break;
         }
+    }
+
+    @action clearParametre = () => {
+        this.hideEverything = "none";
+    }
+
+    @action showParametreSearch = () => {
+        this.hideEverything = "block";
     }
 }
 

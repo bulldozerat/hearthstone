@@ -23,7 +23,7 @@ class ParametreSeach extends React.Component<MyProps, MyState> {
     render() {
         return (
             <Fragment>
-                <div className="parametres-wrapper">
+                <div className="parametres-wrapper" style={{ display: this.props.SearchByParametres.hideEverything}}>
                     <FormControl style={{ width: '100%' }}>
                         <Error message={this.props.SearchByParametres.errorMessage} errorState={this.props.SearchByParametres.errorState}/>
                         <InputLabel>Select card quality*</InputLabel>
@@ -40,7 +40,7 @@ class ParametreSeach extends React.Component<MyProps, MyState> {
                         <Button variant="contained" onClick={this.props.SearchByParametres.fetchCardsByQuality} style={{marginTop: "20px"}}>Search</Button>
                     </FormControl>
                 </div>
-                <div className="class-images-wrapper">
+                <div className="class-images-wrapper" style={{ display: this.props.SearchByParametres.hideEverything }}>
                     {this.props.SearchByParametres.cardData.map(
                         (element: any, i: number) => {
                             return <ClassCard
