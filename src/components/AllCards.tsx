@@ -4,7 +4,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import ReactImageFallback from "react-image-fallback";
+//import ReactImageFallback from "react-image-fallback";
 import ClassCard from "./ClassCard";
 import CardStats from "./CardStats";
 

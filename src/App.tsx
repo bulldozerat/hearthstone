@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   width: 870px;
   margin: 20px auto;
   background: #f9fafc;
-  padding 20px;
+  padding: 20px;
 `
 
 @inject('FetchAllCards', 'SearchSingleCard', 'SearchByParametres')
